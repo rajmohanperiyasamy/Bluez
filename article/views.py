@@ -35,7 +35,7 @@ def contact(request):
         subject = request.POST['subject']+"  from: "+user_mail
         message = request.POST['message']
         sender = 'chandruit15@gmail.com'
-        recipients = ['rajmohan@doublespring.com']
+        recipients = ['chandruit15@gmail.com']
         from django.core.mail import send_mail
         send_mail(subject, message, sender, recipients)
         return render_to_response('success_mail.html',context_instance=RequestContext(request))
