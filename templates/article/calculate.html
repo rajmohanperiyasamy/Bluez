@@ -18,7 +18,7 @@
 </div>	
 {%for client in client%}
 											
-	<div>{{client.id}}:<a href="{%url 'clients_data' client.id %}">{{client.first_name}}</div></a> 
+	<div>&nbsp;&nbsp;&nbsp;{{client.id}}:<a href="{%url 'clients_data' client.id %}">{{client.first_name}}</div></a> 
 	{% endfor %}
 {% endblock %}
 
