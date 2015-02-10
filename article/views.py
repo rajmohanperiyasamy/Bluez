@@ -54,7 +54,6 @@ def contact(request):
 def calculate(request):
     data={}
     client = Clients.objects.all()
-    print client
     data['client'] = client
     return render_to_response('calculate.html',data,context_instance=RequestContext(request))
 
@@ -72,12 +71,8 @@ def clients_data(request,pk=0):
     return render_to_response('clients_data.html',data,context_instance=RequestContext(request))  
     
 def report(request):
-    print"status",request.POST['select_client']
-    
     status = request.POST['select_client']
-    
     if status == '0':
-        print "inside if"
         date=request.POST['date']
         data = {}
         cleint_rep_data = ClientsData.objects.filter(added_date=date)
