@@ -37,7 +37,7 @@ EMAIL_USE_TLS = True
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'rajmohanjr@gmail.com'
-EMAIL_HOST_PASSWORD = 'doublespring1'
+EMAIL_HOST_PASSWORD = 'sdsd'
 DEFAULT_FROM_EMAIL = ''
 SERVER_EMAIL = '<address>'
 
@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'bluez.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    "/home/raj/workspace/bluez/templates/article",
+    "/home/bluezinfomatics/bluez/templates/article",
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
    # project_path('templates'),
@@ -97,13 +97,13 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
    # os.path.join(BASE_DIR, "static"),
-    "/home/raj/workspace/bluez/static",
+    "/home/bluezinfomatics/bluez/static",
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
    # project_path('static/'),
 )
 #MEDIA_ROOT = '/home/raj/workspace/bluez/media/'
-MEDIA_ROOT = '/home/raj/workspace/bluez/media/'
+MEDIA_ROOT = '/home/bluezinfomatics/bluez/media/'
 MEDIA_URL = '/media/'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
