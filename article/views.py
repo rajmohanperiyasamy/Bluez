@@ -30,26 +30,17 @@ def home(request,template='article/add_article.html'):
 
 def contact(request):
     if request.method == 'POST': # If the form has been submitted...
-        form = ContactForm(request.POST) # A form bound to the POST data
-        if form.is_valid():
-            subject = form.cleaned_data['subject']
-            message = form.cleaned_data['message']
-            sender = form.cleaned_data['sender']
-            cc_myself = form.cleaned_data['cc_myself']
-
-            recipients = ['rajmohan@doublespring.com']
-            if cc_myself:
-                recipients.append(sender)
-
-            from django.core.mail import send_mail
-            send_mail(subject, message, sender, recipients)
-            return render_to_response('success_mail.html',context_instance=RequestContext(request))
+        name = request.POST['subject']
+        user_mail = request.POST['email']
+        subject = request.POST['subject']+"  from: "+user_mail
+        message = request.POST['message']
+        sender = 'chandruit15@gmail.com'
+        recipients = ['rajmohan@doublespring.com']
+        from django.core.mail import send_mail
+        send_mail(subject, message, sender, recipients)
+        return render_to_response('success_mail.html',context_instance=RequestContext(request))
     else:
-        form = ContactForm() # An unbound form
-
-    return render(request, 'contact.html', {
-        'form': form,
-    })
+        return render_to_response('home.html',context_instance=RequestContext(request))
     
 def calculate(request):
     data={}
