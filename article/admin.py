@@ -6,4 +6,5 @@ from article.models import Document
 admin.site.register(Accounts)
 admin.site.register(Clients)
 admin.site.register(Document)
+admin.site.register(ClientsData)
 # Register your models here.
