@@ -1,0 +1,72 @@
+{% extends "home.html" %}
+{% block title %}Calculations{% endblock %}
+{% block sidebar %}
+                <ul class="navigation">
+                	<!--a href="http://192.168.1.3:8005">Home</a-->
+                    <li><a href="http://bluezinfo.pythonanywhere.com/" class="selected menu_01">Home</a></li>
+                    <li><a href="http://bluezinfo.pythonanywhere.com/" class="menu_02">About Us</a></li>
+                    <li><a href="http://bluezinfo.pythonanywhere.com/" class="menu_03">Services</a></li>
+                    <li><a href="http://bluezinfo.pythonanywhere.com/" class="menu_04">Gallery</a></li>
+                    <li><a href="http://bluezinfo.pythonanywhere.com/" class="menu_05">Contact</a></li>
+                </ul>
+				{% endblock %}
+{% block content %}
+
+
+<br>
+<br>
+<br>
+<strong>{{name}}</strong>
+<br>
+{% if client%}
+<div>
+
+	<table style="width:99%" border="1" cellpadding="2">
+  <tr>
+    <b><td color="red">Aaccount</td></b>
+    <b><td>Total acc</td></b>		
+    <b><td>completed</td></b>
+	<b><td>Pending</td></b>
+   <b><td>Payment</td></b>
+	<b><td>added_date</td></b>		
+  </tr>
+{%for client in client%}
+<!--div>
+	<strong>Aaccount : {{client.account}} </strong>
+</div>	
+	<div>
+		<br>
+	Total acc:{{client.total}}
+	</div>
+		<div>
+	completed:{{client.completed}}
+	</div>
+		<div>
+	Pending:{{client.pending}}
+	<div>
+		<div>
+	Payment:{{client.status}}
+	</div>
+		<div>
+	Date:{{client.added_date}}-->
+	
+
+  <tr>
+	<td>{{client.account}}</td>
+    <td>{{client.total}}</td>
+	<td>{{client.completed}}</td>		
+    <td>{{client.pending}}</td>
+	<td>{{client.status}}</td>
+    <td>{{client.added_date}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+</div>
+{% else %}
+<div>
+	<strong>OOps!! sorry this client has no deal as of now!!!</strong>
+</div>
+{% endif %}
+	
+{% endblock %}
