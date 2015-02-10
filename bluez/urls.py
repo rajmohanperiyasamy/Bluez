@@ -15,7 +15,6 @@ urlpatterns = patterns('',
     url(r'report/$','article.views.report', name='report'),
     url(r'report2/$','article.views.report2', name='report2'),
     url(r'date/$','article.views.date', name='date'),
-    url(r'fetch/$','article.views.fetch', name='fetch'),
     url(r'^download/(?P<pk>\d+)$', 'article.views.download',name='download'),
     
 )+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
